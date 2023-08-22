@@ -1,6 +1,6 @@
 import PunyCode from "punycode";
 import Events from "events";
-import 'mermaid'
+import mermaid from 'mermaid';
 
 import MarkdownIt from "markdown-it";
 import HighlightJs from "highlight.js";
@@ -12,6 +12,7 @@ import MarkdownItIncrementalDOM from "markdown-it-incremental-dom";
 import MarkdownItMeta from "markdown-it-meta";
 import MarkdownItPlantuml from "markdown-it-plantuml";
 
+mermaid.initialize({ startOnLoad: true });
 const md = new MarkdownIt({
   html: true,
   linkify: true,
