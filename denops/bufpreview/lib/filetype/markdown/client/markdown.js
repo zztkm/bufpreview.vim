@@ -1,5 +1,6 @@
 import PunyCode from "punycode";
 import Events from "events";
+import 'mermaid'
 
 import MarkdownIt from "markdown-it";
 import HighlightJs from "highlight.js";
@@ -21,6 +22,9 @@ const md = new MarkdownIt({
       } catch (__) {
         console.log("err highlight.js")
       }
+    }
+    if (lang && lang.toLowerCase() === "mermaid") {
+        return '<pre class="mermaid">'+str+'</pre>'
     }
     return ""
   },

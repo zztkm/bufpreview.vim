@@ -10,6 +10,7 @@
     "markdown-it-meta": "npm:markdown-it-meta",
     "markdown-it-plantuml": "npm:markdown-it-plantuml",
     "punycode": "npm:punycode",
-    "events": "npm:events"
+    "events": "npm:events",
+    "mermaid": "npm:mermaid"
   }
 }
