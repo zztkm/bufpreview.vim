@@ -1,6 +1,5 @@
 import PunyCode from "punycode";
 import Events from "events";
-import mermaid from 'mermaid';
 
 import MarkdownIt from "markdown-it";
 import HighlightJs from "highlight.js";
@@ -11,8 +10,8 @@ import * as IncrementalDOM from "incremental-dom";
 import MarkdownItIncrementalDOM from "markdown-it-incremental-dom";
 import MarkdownItMeta from "markdown-it-meta";
 import MarkdownItPlantuml from "markdown-it-plantuml";
+import MarkdownItMermaid from "@wekanteam/markdown-it-mermaid";
 
-mermaid.initialize({ startOnLoad: true });
 const md = new MarkdownIt({
   html: true,
   linkify: true,
@@ -23,9 +22,6 @@ const md = new MarkdownIt({
       } catch (__) {
         console.log("err highlight.js")
       }
-    }
-    if (lang && lang.toLowerCase() === "mermaid") {
-        return '<pre class="mermaid">'+str+'</pre>'
     }
     return ""
   },
@@ -40,6 +36,8 @@ md.use(TexMath, {
   delimiters: "dollars",
   katexOptions: { macros: { "\\RR": "\\mathbb{R}" } },
 })
+// use Mermaind
+md.use(MarkdownItMermaid);
 // inject line numbers
 function inject_linenumbers_plugin(md) {
   function injectLineNumbers(tokens, idx, options, env, slf) {

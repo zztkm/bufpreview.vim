@@ -11,6 +11,6 @@
     "markdown-it-plantuml": "npm:markdown-it-plantuml",
     "punycode": "npm:punycode",
     "events": "npm:events",
-    "mermaid": "npm:mermaid"
+    "@wekanteam/markdown-it-mermaid": "npm:@wekanteam/markdown-it-mermaid"
   }
 }
